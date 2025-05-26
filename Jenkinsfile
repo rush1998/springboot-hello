@@ -4,7 +4,7 @@ pipeline{
     tools{
         maven 'maven'
     }
-    env {
+    environment {
         registry = '334973675402.dkr.ecr.us-east-1.amazonaws.com/springboot'
         registryCredential = 'jenkins-ecr-login-credentials'
         dockerimage = ''
