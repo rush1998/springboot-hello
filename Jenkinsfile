@@ -4,7 +4,7 @@ pipeline{
     tools{
         maven 'maven'
     }
-    environment {
+    enviornment {
         registry = '334973675402.dkr.ecr.us-east-1.amazonaws.com/springboot'
         registryCredential = 'jenkins-ecr-login-credentials'
         dockerimage = ''
@@ -34,7 +34,7 @@ pipeline{
         stage('Building the Image') {
         steps {
             script {
-            dockerImage = docker.build registry + ":$BUILD_NUMBER"
+            def dockerImage = docker.build("${registry}:${BUILD_NUMBER}")
         }
     }
     }
