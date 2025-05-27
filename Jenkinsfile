@@ -6,7 +6,7 @@ pipeline{
     }
     environment {
         registry = '334973675402.dkr.ecr.us-east-1.amazonaws.com/springboot'
-        registryCredential = 'jenkins-ecr-login-credentials'
+        registryCredential = 'jenkins'
         dockerimage = ''
     }
     stages{
