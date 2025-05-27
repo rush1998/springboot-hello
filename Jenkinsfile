@@ -6,6 +6,8 @@ pipeline{
     }
     environment {
         registry = '334973675402.dkr.ecr.us-east-1.amazonaws.com/springboot'
+        registryCredential = 'jenkins-ecr-login-credentials'
+        dockerimage = ''
     }
     stages{
         stage("Build"){
@@ -36,5 +38,14 @@ pipeline{
         }
     }
     }
+    stage ('Deploy the Image to Amazon ECR') {
+       steps {
+           script {
+           docker.withRegistry("http://" + registry, "ecr:us-east-1:" + registryCredential ) {
+           dockerImage.push()
+     }
+   }
+  }
+}
     }
 }
