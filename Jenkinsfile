@@ -3,7 +3,6 @@ pipeline{
 
     tools{
         maven 'maven'
-        docker 'docker'
     }
     environment {
         registry = '334973675402.dkr.ecr.us-east-1.amazonaws.com/springboot'
